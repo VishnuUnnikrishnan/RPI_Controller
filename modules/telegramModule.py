@@ -8,6 +8,7 @@ import telegram
 import json
 import os
 
+
 MODULE_NAME = "modules/telegram"
 USERNAME = "username"
 TOKEN = "api_key"
