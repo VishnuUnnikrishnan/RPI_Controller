@@ -1,3 +1,5 @@
 settings/settings2.json
 env/
 .vscode/
+*.pyc
+*.pyo
