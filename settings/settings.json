@@ -1,0 +1,11 @@
+{
+    "main_settings":{
+        "row":"2",
+        "col":"3",
+        "module_0":"clockModule"
+    },
+    "modules.clockModule":{
+        "class": "clockThread",
+        "screen": "clockScreen"
+    }
+}
