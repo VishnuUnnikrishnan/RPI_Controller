@@ -8,7 +8,7 @@ from kivy.uix.gridlayout import GridLayout
 
 
 #Updates the button and is executed from a thread
-class clockThread:
+class weatherThread:
     def __init__(self, button):
         self.button = button   
     
@@ -25,10 +25,10 @@ class clockThread:
             time.sleep(30)
 
 #This controls the default screen that is generated when the button is pressed
-class clockScreen(Screen):
+class weatherScreen(Screen):
 
     def __init__(self,sm,**kwargs):
-        super(clockScreen, self).__init__(**kwargs)
+        super(weatherScreen, self).__init__(**kwargs)
         self.sm = sm
         layout = GridLayout(rows=1)
         self.add_widget(layout)
@@ -41,5 +41,5 @@ class clockScreen(Screen):
 
 
 if __name__ == "__main__":
-    t = clockThread("test")
+    t = weatherThread("test")
     threading.Thread(target=t.run).start()

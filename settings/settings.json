@@ -2,10 +2,20 @@
     "main_settings":{
         "row":"2",
         "col":"3",
-        "module_0":"clockModule"
+        "module_0":"clockModule",
+        "module_1":"weatherModule"
     },
     "modules.clockModule":{
         "class": "clockThread",
         "screen": "clockScreen"
+    },
+    "modules.weatherModule":{
+        "class": "weatherThread",
+        "screen": "weatherScreen",
+        "folder":"assets/weatherFolder",
+        "city":"Sydney",
+        "update_daily":"3h",
+        "update_forecast":"1d"
     }
+
 }

@@ -1,4 +1,5 @@
 settings/settings2.json
+settings/secrets.json
 env/
 .vscode/
 *.pyc
