@@ -2,5 +2,6 @@ settings/settings2.json
 settings/secrets.json
 env/
 .vscode/
+__pycache__/
 *.pyc
 *.pyo
