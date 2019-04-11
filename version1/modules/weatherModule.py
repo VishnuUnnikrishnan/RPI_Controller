@@ -4,19 +4,33 @@ import sched
 import datetime
 from kivy.uix.screenmanager import Screen
 from kivy.uix.button import Button
-from kivy.uix.gridlayout import GridLayout
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.core.text import Label as CoreLabel
+from kivy.graphics import *
+from settingsReader import readSecretAttribute
+import sqlite3
+import requests
 
+class openWeatherApi:
+    def __init__(self,apikey):
+        self.apikey = apikey
+
+    def getDailyWeather(self):
+        pass
+
+    def getWeeklyWeather(self):
+        pass 
 
 #Updates the button and is executed from a thread
 class weatherThread:
     def __init__(self, button):
-        self.button = button   
+        print("Updated Button")
+        self.button = button
+       
     
     def update(self):
-        x = datetime.datetime.now()
-        self.button.text = x.strftime("%A %d %B\n%H:%M")
-        print(x.strftime("%A %d %B\n%H:%M"))
-    
+        pass
         
     def run(self):
         while 1:
@@ -30,8 +44,10 @@ class weatherScreen(Screen):
     def __init__(self,sm,**kwargs):
         super(weatherScreen, self).__init__(**kwargs)
         self.sm = sm
-        layout = GridLayout(rows=1)
+        layout = BoxLayout()
         self.add_widget(layout)
+        
+        
         backButton = Button(text='Back', font_size=20)
         backButton.bind(on_press = self.callback)
         layout.add_widget(backButton)

@@ -7,6 +7,11 @@ def readAttribute(module):
         data = json.load(f)
         return data[module]
 
+def readSecretAttribute(module):
+    with open("settings/secrets.json", "r") as f:
+        data = json.load(f)
+        return data[module]
+        
 
 
 if __name__ == '__main__':

@@ -58,7 +58,8 @@ class MenuScreen(Screen):
             t = executeClass(button)
             threading.Thread(target=t.run).start()
 
-        except:
+        except Exception as e:
+            print (str(e))
             print("Error: No module_"+str(id)+" found")
         
     def changeScreen(self, x, id):
@@ -66,7 +67,7 @@ class MenuScreen(Screen):
         sm.current = x
 
 sm.add_widget(MenuScreen(name="menu"))
-#sm.current = "menu"
+sm.current = "menu"
 
 class rpiDisplay(App):
 
