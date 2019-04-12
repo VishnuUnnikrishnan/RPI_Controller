@@ -6,11 +6,11 @@
         "module_1":"weatherModule"
     },
     "modules.clockModule":{
-        "class": "clockThread",
+        "button": "clockButton",
         "screen": "clockScreen"
     },
     "modules.weatherModule":{
-        "class": "weatherThread",
+        "button": "weatherButton",
         "screen": "weatherScreen",
         "folder":"assets/weatherFolder",
         "city":"Sydney",

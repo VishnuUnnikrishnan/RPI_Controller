@@ -6,7 +6,6 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 
-
 #Updates the button and is executed from a thread
 class clockThread:
     def __init__(self, button):

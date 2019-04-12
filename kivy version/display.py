@@ -7,7 +7,6 @@ from kivy.core.window import Window
 from settingsReader import readAttribute
 from functools import partial
 import imp
-import logging
 import threading
 
 __moduleSettings__ = {}
