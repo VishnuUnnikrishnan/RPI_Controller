@@ -1,10 +1,11 @@
 '''
 Main Class for clock
 '''
-
+from threading import Timer
 
 class main:
     def __init__(self):
+        
         pass
 
     def buildButton(self):
@@ -14,6 +15,18 @@ class main:
     
     def onClick(self, screen):
         return "Click Registered"
+
+    def timeout(self):
+        self.ws.send("Hello World!")
+        print(type(self.ws))
+
+
+    def setWebSocket(self, websocket):
+        self.ws = websocket
+        t = Timer(1, self.timeout)
+        t.start()
+    
+    
 
 class screen:
     def __init__(self):

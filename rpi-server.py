@@ -1,12 +1,19 @@
-'''
 
-
-'''
+from flask_sockets import Sockets
 from modules.modulesMaster import display
 from flask import Flask, request, send_from_directory, render_template
 
-app = Flask(__name__, static_url_path='')
+
+app = Flask(__name__)
+sockets = Sockets(app)
 disp = display()   
+
+@sockets.route('/message')
+def messages(ws):
+    print("RPI Server")
+    disp.setLink(ws)
+    while not ws.closed:
+        message = ws.receive()
 
 @app.route('/js/<path:path>')
 def send_js(path):
@@ -14,7 +21,7 @@ def send_js(path):
 
 @app.route('/css/<path:path>')
 def send_css(path):
-    return send_from_directory('static/css', path)
+    return send_from_directory('static/css', path) 
 
 @app.route("/modules")
 def modules():
@@ -26,8 +33,6 @@ def moduleClicks(path):
         item = disp.paths[int(path)]
         module = disp.buttonModules[item]
         module.onClick()
-
-
     else:
         return "error"
 

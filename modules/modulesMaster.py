@@ -21,16 +21,15 @@ class display:
             for j in range(0,cols):
                 #Should only have 1,2,3,4,6,12 columns, too lazy to handle centering otherwise
                 num_cols=int(12)/int(cols)
-                retString += "<div class='col-sm-"+str(round(num_cols))+" baseCol' id='"+str(k)+"' onClick='buttonPress("+id+")' >"
+                retString += "<div class='col-sm-"+str(round(num_cols))+" baseCol' id='"+str(k)+"' onClick='buttonPress("+str(id)+")' >"
                 k+=1
                 #This is where the code to load modules is located
                 try:
                     moduleClass = self.loadModule(k)
                     newModule = moduleClass()
-
-                    self.buttonModules += newModule
-
+                    self.buttonModules.append(newModule)
                     retString += newModule.buildButton()
+
                 except Exception as e:
                     retString += "Error " + str(e)
 
@@ -51,3 +50,9 @@ class display:
     def createPaths(self):
         rawDir = next(os.walk('./modules'))[1] 
         self.paths = [x for x in rawDir if x.endswith(".mod")]
+
+    def setLink(self, ws):
+        self.ws = ws
+        self.buttonModules[0].setWebSocket(self.ws)
+        print("web socket was here main module")
+
