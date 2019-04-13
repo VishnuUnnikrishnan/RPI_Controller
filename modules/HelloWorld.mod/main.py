@@ -9,9 +9,9 @@ class main:
         pass
 
     def buildButton(self):
-        return """<div style = "text-align:center; display: table-cell; vertical-align: middle;">
-                        Hello World!
-                  </div>"""
+        return """<div id = "quote" style = "text-align:center; display: table-cell; vertical-align: middle;">
+        <div style ="font-size:20pt; font-style:strong;">I am the master of my fate,<br> I am the captain of my soul. </div>
+        </div>"""
     
     def onClick(self, screen):
         return "Click Registered"

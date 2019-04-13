@@ -22,6 +22,10 @@ def send_js(path):
 def send_css(path):
     return send_from_directory('static/css', path) 
 
+@app.route('/svg/<path:path>')
+def send_svg(path):
+    return send_from_directory('static/svg', path) 
+
 @app.route("/modules")
 def modules():
     return disp.createOutput()

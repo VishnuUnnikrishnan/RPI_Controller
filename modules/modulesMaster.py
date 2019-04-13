@@ -53,6 +53,9 @@ class display:
 
     def setLink(self, ws):
         self.ws = ws
-        self.buttonModules[0].setWebSocket(self.ws)
+        print(self.paths)
+        print(self.buttonModules)
+        for i in range(0,len(self.paths)):
+            self.buttonModules[i].setWebSocket(self.ws)
         
 
