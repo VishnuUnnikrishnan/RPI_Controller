@@ -3,6 +3,7 @@ settings/secrets.json
 env/
 .vscode/
 __pycache__/
+*.db
 *.pyc
 *.pyo
 *.secrets
