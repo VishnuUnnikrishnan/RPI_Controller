@@ -17,8 +17,8 @@ class main:
         return "Click Registered"
 
     def timeout(self):
-        self.ws.send("Hello World!")
-        print(type(self.ws))
+        self.ws.send("console.log('Hello World!')")
+        
 
 
     def setWebSocket(self, websocket):

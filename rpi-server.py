@@ -10,7 +10,6 @@ disp = display()
 
 @sockets.route('/message')
 def messages(ws):
-    print("RPI Server")
     disp.setLink(ws)
     while not ws.closed:
         message = ws.receive()

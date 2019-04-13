@@ -54,5 +54,5 @@ class display:
     def setLink(self, ws):
         self.ws = ws
         self.buttonModules[0].setWebSocket(self.ws)
-        print("web socket was here main module")
+        
 

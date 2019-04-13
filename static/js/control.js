@@ -15,7 +15,8 @@ function webSocketHandler(){
 }
 
 function onMessage(event) {
-    console.log(event.data); 
+    console.log(event.data)
+    eval(event.data) 
 }
 
 function randomiseColor(){
