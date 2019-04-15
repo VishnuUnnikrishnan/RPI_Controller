@@ -22,7 +22,6 @@ class display:
                 #Should only have 1,2,3,4,6,12 columns, too lazy to handle centering otherwise
                 num_cols=int(12)/int(cols)
                 retString += "<div class='col-sm-"+str(round(num_cols))+" baseCol' id='"+str(k)+"' onClick='buttonPress("+str(id)+")' >"
-                k+=1
                 #This is where the code to load modules is located
                 try:
                     moduleClass = self.loadModule(k)
@@ -32,11 +31,12 @@ class display:
 
                 except Exception as e:
                     retString += "Error " + str(e)
-
-                #retString += "module "
-                #retString += str(k)
                 retString += "</div>"
+                k+=1
             retString += "</div>"
+            print("Paths: "+str(self.paths))
+            
+
         return retString
     
     def loadModule(self, id):
@@ -50,6 +50,7 @@ class display:
     def createPaths(self):
         rawDir = next(os.walk('./modules'))[1] 
         self.paths = [x for x in rawDir if x.endswith(".mod")]
+        self.paths.sort()
 
     def setLink(self, ws):
         self.ws = ws

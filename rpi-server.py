@@ -3,7 +3,6 @@ from flask_sockets import Sockets
 from modules.modulesMaster import display
 from flask import Flask, request, send_from_directory, render_template
 
-
 app = Flask(__name__)
 sockets = Sockets(app)
 disp = display()   
